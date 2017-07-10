@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.gjt.mm.mysql.Driver;
 import org.orman.dbms.OnDemandConnection;
 import org.orman.dbms.QueryExecutionContainer;
 import org.orman.dbms.ResultList;
@@ -198,10 +197,10 @@ public class QueryExecutionContainerImpl implements QueryExecutionContainer {
 
 		// Establish DB connection.
 		try {
+			Class.forName("com.mysql.jdbc.Driver");
 			Log.debug("Trying to establish MySQL connection to %s at %s.",
 					this.settings.getHost(), this.settings.getPort());
 
-			DriverManager.registerDriver(new Driver());
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://" + this.settings.getHost() + ":"
 							+ this.settings.getPort() + "/"
@@ -211,6 +210,8 @@ public class QueryExecutionContainerImpl implements QueryExecutionContainer {
 
 		} catch (SQLException e) {
 			throwError(new DatasourceConnectionException(e.getMessage()));
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 
 		if (conn == null){

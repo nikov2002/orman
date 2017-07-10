@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component jdk="1.8" jdk_type="JavaSDK">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="sqlite4java.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/sqlite4java.jar!/"/>
+	</lib>
+	<lib name="mysql-connector-java-5.0.8-bin.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.0.8-bin.jar!/"/>
+	</lib>
+	<lib name="log4j-1.2.16.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/log4j-1.2.16.jar!/"/>
+	</lib>
+	<lib name="android.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/android.jar!/"/>
+	</lib>
+</component>
